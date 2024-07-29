@@ -1,15 +1,23 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import robo_aspirador.*;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class Test {
+    public static void main(String[] args) {
+
+        Funcao aspirar = new FuncaoAspirar();
+        Funcao desligar = new FuncaoDesligar();
+        Funcao ligar = new FuncaoLigar();
+
+        Robo robo = new Robo();
+        robo.setFuncao(ligar);
+        robo.aspirar();
+        robo.aspirar();
+        robo.setFuncao(aspirar);
+        robo.aspirar();
+        robo.setFuncao(desligar);
+        robo.aspirar();
+        robo.aspirar();
+        robo.aspirar();
+
+
     }
 }
